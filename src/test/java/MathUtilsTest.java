@@ -1,5 +1,4 @@
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -8,9 +7,25 @@ class MathUtilsTest {
 
     MathUtils mathUtils;
 
+    @BeforeAll
+    static void beforeAllInit() {
+        System.out.println("This needs to run before all.");
+    }
+
     @BeforeEach
     void init() {
+        System.out.println("Initializing...");
         mathUtils = new MathUtils();
+    }
+
+    @AfterEach
+    void cleanup() {
+        System.out.println("Cleaning up...");
+    }
+
+    @AfterAll
+    static void afterAllCleanUp() {
+        System.out.println("This needs to run after all.");
     }
 
     @Test
