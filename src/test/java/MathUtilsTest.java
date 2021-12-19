@@ -1,13 +1,14 @@
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MathUtilsTest {
 
     @Test
     void test() {
-        //assertTrue(true);
-        System.out.println("Test completed successfully");
-
+        MathUtils mathUtils = new MathUtils();
+        int expected = 2;
+        int actual = mathUtils.add(1, 1);
+        assertEquals(expected, actual);
     }
 }
