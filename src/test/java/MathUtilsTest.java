@@ -14,13 +14,13 @@ class MathUtilsTest {
 
     @BeforeEach
     void init() {
-        System.out.println("Initializing...");
+        System.out.println("Initializing...!");
         mathUtils = new MathUtils();
     }
 
     @AfterEach
     void cleanup() {
-        System.out.println("Cleaning up...");
+        System.out.println("Cleaning up...!");
     }
 
     @AfterAll
