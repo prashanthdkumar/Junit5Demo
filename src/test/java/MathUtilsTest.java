@@ -2,8 +2,7 @@ import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.condition.EnabledOnOs;
 import org.junit.jupiter.api.condition.OS;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 class MathUtilsTest {
 
@@ -37,6 +36,16 @@ class MathUtilsTest {
         int actual = mathUtils.add(1, 1);
         System.out.println("In testAdd.");
         assertEquals(expected, actual, "The Add method should add two numbers.");
+    }
+
+    @Test
+    @DisplayName("Testing Multiply method.")
+    void testMultiply() {
+        assertAll(
+                () -> assertEquals(4, mathUtils.multiply(2, 2)),
+                () -> assertEquals(0, mathUtils.multiply(2, 0)),
+                () -> assertEquals(-2, mathUtils.multiply(2, -1))
+        );
     }
 
     @Test
