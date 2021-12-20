@@ -8,6 +8,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class MathUtilsTest {
 
     MathUtils mathUtils;
+    TestInfo testInfo;
+    TestReporter testReporter;
 
     @BeforeAll
     static void beforeAllInit() {
@@ -15,8 +17,11 @@ class MathUtilsTest {
     }
 
     @BeforeEach
-    void init() {
+    void init(TestInfo testInfo, TestReporter testReporter) {
         System.out.println("Initializing...!");
+        this.testInfo = testInfo;
+        this.testReporter = testReporter;
+        testReporter.publishEntry("Running " + testInfo.getDisplayName() + "with tags " + testInfo.getTags());
         mathUtils = new MathUtils();
     }
 
@@ -54,6 +59,7 @@ class MathUtilsTest {
     @DisplayName("Testing Multiply method.")
     void testMultiply() {
         System.out.println("In testMultiply.");
+        testReporter.publishEntry("Running " + testInfo.getDisplayName() + "with tags " + testInfo.getTags());
         assertAll(
                 () -> assertEquals(4, mathUtils.multiply(2, 2)),
                 () -> assertEquals(0, mathUtils.multiply(2, 0)),
