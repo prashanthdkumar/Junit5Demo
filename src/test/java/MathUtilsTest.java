@@ -31,6 +31,7 @@ class MathUtilsTest {
     }
 
     @Nested
+    @Tag("Math")
     @DisplayName("add method")
     class AddTest {
         @Test
@@ -49,6 +50,7 @@ class MathUtilsTest {
     }
 
     @Test
+    @Tag("Math")
     @DisplayName("Testing Multiply method.")
     void testMultiply() {
         System.out.println("In testMultiply.");
@@ -60,6 +62,7 @@ class MathUtilsTest {
     }
 
     @Test
+    @Tag("Math")
     @EnabledOnOs(OS.WINDOWS)
     @DisplayName("Testing Divide method.")
     void testDivide() {
@@ -70,6 +73,7 @@ class MathUtilsTest {
     }
 
     @RepeatedTest(3)
+    @Tag("Circle")
     @DisplayName("Testing Compute Circle Area method.")
     void testComputeCircleArea(RepetitionInfo repetitionInfo) {
         System.out.println("In testComputeCircleArea. " + repetitionInfo.getCurrentRepetition() + "/" + repetitionInfo.getTotalRepetitions());
