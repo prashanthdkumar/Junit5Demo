@@ -29,6 +29,7 @@ class MathUtilsTest {
     }
 
     @Test
+    @DisplayName("Testing Add method.")
     void testAdd() {
         int expected = 2;
         int actual = mathUtils.add(1, 1);
@@ -36,11 +37,14 @@ class MathUtilsTest {
     }
 
     @Test
+    @DisplayName("Testing Divide method.")
     void testDivide() {
         assertThrows(ArithmeticException.class, () -> mathUtils.divide(1, 0), "The Divide by zero should throw");
     }
 
     @Test
+    @Disabled
+    @DisplayName("Testing Compute Circle Area method.")
     void testComputeCircleArea() {
         assertEquals(314.1592653589793, mathUtils.computeCircleArea(10.0), "Should return right circle area");
     }
