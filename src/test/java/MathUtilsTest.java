@@ -37,14 +37,14 @@ class MathUtilsTest {
         @DisplayName("when adding two positive numbers")
         void testAddPositive() {
             System.out.println("In testAddPositive.");
-            assertEquals(2, mathUtils.add(1, 1), "should return the right sum.");
+            assertEquals(2, mathUtils.add(1, 1), () -> "should return the right sum.");
         }
 
         @Test
         @DisplayName("when adding two negative numbers")
         void testAddNegative() {
             System.out.println("In testAddNegative.");
-            assertEquals(-2, mathUtils.add(-1, -1), "should return the right sum.");
+            assertEquals(-2, mathUtils.add(-1, -1), () -> "should return the right sum.");
         }
     }
 
@@ -66,7 +66,7 @@ class MathUtilsTest {
         boolean isServerUp = true;
         Assumptions.assumeTrue(isServerUp);
         System.out.println("In testDivide.");
-        assertThrows(ArithmeticException.class, () -> mathUtils.divide(1, 0), "The Divide by zero should throw");
+        assertThrows(ArithmeticException.class, () -> mathUtils.divide(1, 0), () -> "The Divide by zero should throw");
     }
 
     @Test
@@ -74,6 +74,6 @@ class MathUtilsTest {
     @DisplayName("Testing Compute Circle Area method.")
     void testComputeCircleArea() {
         System.out.println("In testComputeCircleArea.");
-        assertEquals(314.1592653589793, mathUtils.computeCircleArea(10.0), "Should return right circle area");
+        assertEquals(314.1592653589793, mathUtils.computeCircleArea(10.0), () -> "Should return right circle area");
     }
 }
