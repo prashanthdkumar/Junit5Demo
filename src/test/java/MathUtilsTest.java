@@ -41,6 +41,7 @@ class MathUtilsTest {
     @Test
     @DisplayName("Testing Multiply method.")
     void testMultiply() {
+        System.out.println("In testMultiply.");
         assertAll(
                 () -> assertEquals(4, mathUtils.multiply(2, 2)),
                 () -> assertEquals(0, mathUtils.multiply(2, 0)),
