@@ -4,6 +4,7 @@ import org.junit.jupiter.api.condition.OS;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@DisplayName("When running MathUtils")
 class MathUtilsTest {
 
     MathUtils mathUtils;
@@ -29,13 +30,22 @@ class MathUtilsTest {
         System.out.println("This needs to run after all.");
     }
 
-    @Test
-    @DisplayName("Testing Add method.")
-    void testAdd() {
-        int expected = 2;
-        int actual = mathUtils.add(1, 1);
-        System.out.println("In testAdd.");
-        assertEquals(expected, actual, "The Add method should add two numbers.");
+    @Nested
+    @DisplayName("add method")
+    class AddTest {
+        @Test
+        @DisplayName("when adding two positive numbers")
+        void testAddPositive() {
+            System.out.println("In testAddPositive.");
+            assertEquals(2, mathUtils.add(1, 1), "should return the right sum.");
+        }
+
+        @Test
+        @DisplayName("when adding two negative numbers")
+        void testAddNegative() {
+            System.out.println("In testAddNegative.");
+            assertEquals(-2, mathUtils.add(-1, -1), "should return the right sum.");
+        }
     }
 
     @Test
